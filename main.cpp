@@ -347,7 +347,7 @@ int main() {
     
     file.close(); 
 
-    if (operationSum == 0) {
+    if (operationSum >= 0) {
         cout << "Suma operacji: " << operationSum << "\n"; 
     }
     return 0;
