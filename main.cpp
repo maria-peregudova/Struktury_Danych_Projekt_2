@@ -14,73 +14,93 @@ using namespace std::chrono;
 
 // Przypadek Average Case
 void createHeapCopies(BinaryHeap<int>** arr, int numCopies, int size) {
-    for (int i = 0; i < numCopies; ++i) {
+    for (int i = 0; i < numCopies; i++) {
         arr[i] = new BinaryHeap<int>(size + 1);
-        for (int j = 0; j < size; ++j) arr[i]->add(j, rand() % 1000); 
+        for (int j = 0; j < size; j++) {
+            arr[i]->add(j, rand() % 1000);
+        }
     }
 }
 
 void createLLCopies(LinkedList_Q<int, int>** arr, int numCopies, int size) {
-    for (int i = 0; i < numCopies; ++i) {
+    for (int i = 0; i < numCopies; i++) {
         arr[i] = new LinkedList_Q<int, int>();
-        for (int j = 0; j < size; ++j) arr[i]->add(j, rand() % 1000); 
+        for (int j = 0; j < size; j++) {
+            arr[i]->add(j, rand() % 1000);
+        }
     }
 }
 
 void createTreapCopies(Treap_Q<int, int>** arr, int numCopies, int size) {
-    for (int i = 0; i < numCopies; ++i) {
+    for (int i = 0; i < numCopies; i++) {
         arr[i] = new Treap_Q<int, int>();
-        for (int j = 0; j < size; ++j) arr[i]->add(j, rand() % 1000);
+        for (int j = 0; j < size; j++) {
+            arr[i]->add(j, rand() % 1000);
+        }   
     }
 }
 
 // Przypadek Best Case
 // void createHeapCopies(BinaryHeap<int>** arr, int numCopies, int size) {
-//     for (int i = 0; i < numCopies; ++i) {
+//     for (int i = 0; i < numCopies; i++) {
 //         arr[i] = new BinaryHeap<int>(size + 1);
-//         for (int j = 0; j < size; ++j) arr[i]->add(j, j); // Rosnące priorytety
+//         for (int j = 0; j < size; j++) {
+//             arr[i]->add(j, j); // Rosnące priorytety
+//         }
 //     }
 // }
 
 // void createLLCopies(LinkedList_Q<int, int>** arr, int numCopies, int size) {
-//     for (int i = 0; i < numCopies; ++i) {
+//     for (int i = 0; i < numCopies; i++) {
 //         arr[i] = new LinkedList_Q<int, int>();
-//         for (int j = 0; j < size; ++j) arr[i]->add(j, j); // Rosnące priorytety
+//         for (int j = 0; j < size; j++) {
+//             arr[i]->add(j, j); // Rosnące priorytety
+//         }
 //     }
 // }
 
 // void createTreapCopies(Treap_Q<int, int>** arr, int numCopies, int size) {
-//     for (int i = 0; i < numCopies; ++i) {
+//     for (int i = 0; i < numCopies; i++) {
 //         arr[i] = new Treap_Q<int, int>();
-//         for (int j = 0; j < size; ++j) arr[i]->add(j, j); // Rosnące priorytety
+//         for (int j = 0; j < size; j++) {
+//             arr[i]->add(j, j); // Rosnące priorytety
+//         }
 //     }
 // }
 
 // Przypadek Worst Case
 // void createHeapCopies(BinaryHeap<int>** arr, int numCopies, int size) {
-//     for (int i = 0; i < numCopies; ++i) {
+//     for (int i = 0; i < numCopies; i++) {
 //         arr[i] = new BinaryHeap<int>(size + 1);
-//         for (int j = 0; j < size; ++j) arr[i]->add(j, size - j); // Malejące priorytety
+//         for (int j = 0; j < size; j++) {
+//             arr[i]->add(j, size - j); // Malejące priorytety
+//         }
 //     }
 // }
 
 // void createLLCopies(LinkedList_Q<int, int>** arr, int numCopies, int size) {
-//     for (int i = 0; i < numCopies; ++i) {
+//     for (int i = 0; i < numCopies; i++) {
 //         arr[i] = new LinkedList_Q<int, int>();
-//         for (int j = 0; j < size; ++j) arr[i]->add(j, size - j); // Malejące priorytety
+//         for (int j = 0; j < size; j++) {
+//             arr[i]->add(j, size - j); // Malejące priorytety
+//         }
 //     }
 // }
 
 // void createTreapCopies(Treap_Q<int, int>** arr, int numCopies, int size) {
-//     for (int i = 0; i < numCopies; ++i) {
+//     for (int i = 0; i < numCopies; i++) {
 //         arr[i] = new Treap_Q<int, int>();
-//         for (int j = 0; j < size; ++j) arr[i]->add(j, size - j); // Malejące priorytety
+//         for (int j = 0; j < size; j++) {
+//             arr[i]->add(j, size - j); // Malejące priorytety
+//         }
 //     }
 // }
 
 template <typename T>
 void deleteCopies(T** copiesArr, int numCopies) {
-    for (int i = 0; i < numCopies; ++i) delete copiesArr[i];
+    for (int i = 0; i < numCopies; i++) {
+        delete copiesArr[i];
+    }
 }
 
 int main() {
